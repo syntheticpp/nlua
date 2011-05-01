@@ -16,10 +16,15 @@ namespace  nlua
     //        Engine
     //****************************************************************************
 
-    Engine::Engine():lua_state(0)
+    Engine::Engine() : lua_state(0)
     {
         lua_state = lua_open();
         luaL_openlibs(lua_state);
+    }
+
+
+    Engine::Engine(lua_State* L) : lua_state(L)
+    {
     }
 
 

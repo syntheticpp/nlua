@@ -23,6 +23,7 @@ namespace  nlua
     {
     public:
         Engine();
+        Engine(lua_State*);
         Engine(const Engine&);
         ~Engine();
 
