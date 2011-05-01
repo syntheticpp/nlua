@@ -1,0 +1,18 @@
+
+find_package(Lua51 QUIET)
+
+if(LUA51_FOUND)
+        message(STATUS "Using system Lua from ${LUA_INCLUDE_DIR}")
+        message(STATUS "Lua must be build with -fPIC")
+        set(lua_libs ${LUA_LIBRARIES} dl CACHE STRING "Lua Libraries" FORCE)
+        set(lua_includes ${LUA_INCLUDE_DIR} CACHE STRING "Lua inlude path" FORCE)
+        set(lua_definitions -DNLUA_LUA_COMPILED_AS_C CACHE STRING "How additiona flags" FORCE)
+else()
+        message(STATUS "Building own Lua")
+	set(lualib_name nlua_lua)
+	set(LUA_COMPILED_AS_CPP 1)
+	include(buildlua.cmake)
+	set(lua_libs ${lualib_name} CACHE STRING "Lua Libraries" FORCE)
+	set(lua_includes ${TOP_SRC_DIR}/lua/lua/src CACHE STRING "Lua inlude path" FORCE)	
+	install(TARGETS ${lualib_name} DESTINATION lib)
+endif()

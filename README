@@ -1,0 +1,21 @@
+nlua  0.1
+---------
+
+nlua is a binding between C++ and Lua.
+(nlua short for 'namespace lua')
+
+The main idea is to have a C++ API which follows
+the 'table' approach. The written C++ code should
+a little bit look like Lua code.
+
+Another goal is to have easy to understand and
+maintain code base. Using templates couldn't be
+avoided but not much meta-programming is used.
+
+In the test directory are examples how the example
+binding of the book "Programming in Lua" could be
+transformed into nlua code.
+
+Documentation is not needed because the code
+reads like prose. ;)
+
