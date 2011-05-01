@@ -23,8 +23,8 @@ namespace  nlua
     {
     public:
         Engine();
-        Engine(lua_State*);
-        Engine(const Engine&);
+        explicit Engine(lua_State*);
+        explicit Engine(const Engine&);
         ~Engine();
 
         operator lua_State*() const { return luaState(); }
