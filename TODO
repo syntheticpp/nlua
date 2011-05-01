@@ -1,5 +1,4 @@
-
-- string typedef/policy (don't enfoce std::string)?
+- string typedef/policy (don't enforce std::string)?
 - remove cast operators?
 - properties: t.a = 8
 - attributes: t.a.foo()
@@ -8,4 +7,4 @@
 - unittests
 - option to build without rtti
 - cmake option system
-
+- creators
